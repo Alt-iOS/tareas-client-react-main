@@ -9,7 +9,6 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
     const [name, setName] = useState(oldProduct.name)
     const [description, setDescription] = useState(oldProduct.description)
     const [price, setPrice] = useState(oldProduct.price)
-    const [_id, set_Id] =useState(oldProduct._id)
 
     const onEnviar = (event) => {
         event.preventDefault()
@@ -28,8 +27,7 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
     }
 
     return (
-        <div className="container">
-            <Container>
+            <Container named="container">
                 <Row>
                         <Form onSubmit={onEnviar}>
                             <Form.Group className="mb-3" controlId="name">
@@ -40,10 +38,6 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
                                 </Form.Text>
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="_id">
-                                <Form.Label>Codigo</Form.Label>
-                                <Form.Control type="text" placeholder="Id" value={_id} onChange={(txt) => set_Id(txt.target.value)} />
-                            </Form.Group>
 
                             <Form.Group className="mb-3" controlId="id">
                                 <Form.Label>Id</Form.Label>
@@ -66,10 +60,6 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
                         </Form>
                 </Row>
             </Container>
-        </div>
-
-
-
     )
 }
 
