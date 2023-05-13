@@ -13,14 +13,14 @@ const ProductList = () => {
 
     // Hook para editar varibles de estado
     useEffect(() => {
-        fetch("https://api-rest-batarseshija.azurewebsites.net/users")
+        fetch("https://api-rest-batarseshija.azurewebsites.net/products")
             .then((res) => res.json())
             .then((data) => setProducto(data.data))
             .catch((err) => console.log(`Error: ${err}`));
     }, []);
 
     const getTareas = () => {
-        fetch("https://api-rest-batarseshija.azurewebsites.net/users")
+        fetch("https://api-rest-batarseshija.azurewebsites.net/products")
             .then((res) => res.json())
             .then((data) => setProducto(data.data))
             .then((err) => console.log(`Error: ${err}`));
@@ -28,7 +28,7 @@ const ProductList = () => {
 
     const createTarea = (data) => {
         try {
-            fetch("https://api-rest-batarseshija.azurewebsites.net/users", {
+            fetch("https://api-rest-batarseshija.azurewebsites.net/products", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const ProductList = () => {
 
     const deleteTarea = (data) => {
         try {
-            fetch(`https://api-rest-batarseshija.azurewebsites.net/users${data}`, {
+            fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data}`, {
                 method: "DELETE"
             })
                 .then(response => response.json())
@@ -65,7 +65,7 @@ const ProductList = () => {
 
     const updateTarea = (data) => {
         try {
-            fetch(`https://api-rest-batarseshija.azurewebsites.net/users${data._id}`, {
+            fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

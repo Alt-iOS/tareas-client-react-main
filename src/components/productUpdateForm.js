@@ -6,21 +6,22 @@ import './style.css';
 
 const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
     const [id, setId] = useState(oldProduct.id)
-    const [name, setName] = useState(oldProduct.nombre)
-    const [descripcion, setDescripcion] = useState(oldProduct.descripcion)
-    const [precio, setPrecio] = useState(oldProduct.precio)
+    const [name, setName] = useState(oldProduct.name)
+    const [description, setDescription] = useState(oldProduct.description)
+    const [price, setPrice] = useState(oldProduct.price)
+    const [_id, set_Id] =useState(oldProduct._id)
 
     const onEnviar = (event) => {
         event.preventDefault()
-        if (id === "" || name === "" || descripcion === "" || precio === "") {
+        if (id === "" || name === "" || description === "" || price === "") {
             alert("You cant left any empty spaces")
         } else {
             let data = {
                 id: id,
                 _id: oldProduct._id,
                 name: name,
-                descripcion: descripcion,
-                precio: precio,
+                description: description,
+                price: price,
             }
             onClickFn(data)
         }
@@ -39,19 +40,24 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
                                 </Form.Text>
                             </Form.Group>
 
+                            <Form.Group className="mb-3" controlId="_id">
+                                <Form.Label>Codigo</Form.Label>
+                                <Form.Control type="text" placeholder="Id" value={_id} onChange={(txt) => set_Id(txt.target.value)} />
+                            </Form.Group>
+
                             <Form.Group className="mb-3" controlId="id">
                                 <Form.Label>Id</Form.Label>
-                                <Form.Control type="number" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
+                                <Form.Control type="text" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="descripcion">
+                            <Form.Group className="mb-3" controlId="description">
                                 <Form.Label>Descripcion</Form.Label>
-                                <Form.Control type="text" placeholder="descripcion" value={descripcion} onChange={(txt) => setDescripcion(txt.target.value)} />
+                                <Form.Control type="text" placeholder="description" value={description} onChange={(txt) => setDescription(txt.target.value)} />
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="precio">
+                            <Form.Group className="mb-3" controlId="price">
                                 <Form.Label>Precio</Form.Label>
-                                <Form.Control type="number" placeholder="precio" value={precio} onChange={(txt) => setPrecio(txt.target.value)} />
+                                <Form.Control type="number" placeholder="price" value={price} onChange={(txt) => setPrice(txt.target.value)} />
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
