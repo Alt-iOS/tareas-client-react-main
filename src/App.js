@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import TareasList from './components/tareasList'
+import ProductList from './components/productList'
 
 function App() {
     return (
         <div className="App" >
             <h1>
-                Lista de Tareas
+                Lista de Productos disponibles
             </h1>
 
-            <TareasList />
+            <ProductList />
         </div>
     );
 }

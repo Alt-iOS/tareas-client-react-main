@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
 import { useEffect, useState } from "react";
-import TareasUpdateForm from './tareasUpdateForm'
+import TareasUpdateForm from './productUpdateForm'
 
 const Usuario = ({ usuario, onDelete, onUpdate }) => {
     const [showForm, setShowForm] = useState(false)

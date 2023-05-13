@@ -1,28 +1,28 @@
 //require("dotenv").config()
 import { useEffect, useState } from "react";
-import Usuario from "./usuario";
-import TareasForm from "./tareasForm"
+import Producto from "./producto";
+import ProductForm from "./productForm"
 import { Button } from 'react-bootstrap';
 
 
-const TareasList = () => {
+const ProductList = () => {
 
 
-    const [usuario, setUsuario] = useState([]);
+    const [producto, setProducto] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
     // Hook para editar varibles de estado
     useEffect(() => {
         fetch("https://api-restusuarios-perezlopez.azurewebsites.net/users")
             .then((res) => res.json())
-            .then((data) => setUsuario(data.data))
+            .then((data) => setProducto(data.data))
             .catch((err) => console.log(`Error: ${err}`));
     }, []);
 
     const getTareas = () => {
         fetch("https://api-restusuarios-perezlopez.azurewebsites.net/users")
             .then((res) => res.json())
-            .then((data) => setUsuario(data.data))
+            .then((data) => setProducto(data.data))
             .then((err) => console.log(`Error: ${err}`));
     }
 
@@ -37,7 +37,7 @@ const TareasList = () => {
             })
                 .then(response => response.json())
                 .then(dataResponse => {
-                    setUsuario([...usuario, dataResponse.data]);
+                    setProducto([...producto, dataResponse.data]);
                     setShowForm(false);
                 });
         } catch (err) {
@@ -87,11 +87,11 @@ const TareasList = () => {
     // Regreso dinamico de informacion
     return (
         <div>
-            {usuario.map((usuario, index) => (
-                <Usuario
+            {producto.map((producto, index) => (
+                <Producto
                     key={index}
                     index={index}
-                    usuario={usuario}
+                    producto={producto}
                     onDelete={deleteTarea}
                     onUpdate={updateTarea}
                 />
@@ -100,10 +100,10 @@ const TareasList = () => {
             <Button variant="primary" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Close" : "Create Homework"}
             </Button>
-            {showForm && <TareasForm onClickFn={createTarea}></TareasForm>}
+            {showForm && <ProductForm onClickFn={createTarea}></ProductForm>}
             <br></br>
         </div>
     )
 }
 
-export default TareasList;
+export default ProductList;

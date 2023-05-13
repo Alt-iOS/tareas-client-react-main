@@ -2,24 +2,22 @@ import React, { useState } from "react";
 import { Form, Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
-const TareasForm = ({ onClickFn }) => {
+const ProductForm = ({ onClickFn }) => {
 
     const [id, setId] = useState("");
     const [name, setName] = useState("");
-    const [puntos, setPuntos] = useState("");
-    const [materia, setMateria] = useState("");
-    const [fechaEntrega, setfechaEntrega] = useState("");
+    const [precio, setPrecio] = useState("");
+    const [descripcion, setDescripcion] = useState("");
 
     const onEnviar = (event) => {
         event.preventDefault()
-        if (id === "" || name === "" || puntos === "" || materia === "" || fechaEntrega === "") alert("No puede dejar ningun campo vacio");
+        if (id === "" || name === "" || precio === "" || descripcion === "") alert("No puede dejar ningun campo vacio");
         else {
             let data = {
                 id: id,
                 name: name,
-                puntos: puntos,
-                materia: materia,
-                fechaEntrega: fechaEntrega
+                precio: precio,
+                descripcion: descripcion,
             };
             onClickFn(data);
         }
@@ -43,19 +41,14 @@ const TareasForm = ({ onClickFn }) => {
                             <Form.Control type="number" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="subject">
-                            <Form.Label>Subject</Form.Label>
-                            <Form.Control type="text" placeholder="Subject" value={materia} onChange={(txt) => setMateria(txt.target.value)} />
+                        <Form.Group className="mb-3" controlId="descripcion">
+                            <Form.Label>Descripcion</Form.Label>
+                            <Form.Control type="text" placeholder="descripcion" value={descripcion} onChange={(txt) => setDescripcion(txt.target.value)} />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="Grade">
-                            <Form.Label>Grade</Form.Label>
-                            <Form.Control type="number" placeholder="Grade Points" value={puntos} onChange={(txt) => setPuntos(txt.target.value)} />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="DateTo">
-                            <Form.Label>DateTo</Form.Label>
-                            <Form.Control type="date" placeholder="Date Sheadule" value={fechaEntrega} onChange={(txt) => setfechaEntrega(txt.target.value)} />
+                        <Form.Group className="mb-3" controlId="precio">
+                            <Form.Label>Precio</Form.Label>
+                            <Form.Control type="number" placeholder="precio" value={precio} onChange={(txt) => setPrecio(txt.target.value)} />
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
@@ -68,4 +61,4 @@ const TareasForm = ({ onClickFn }) => {
     )
 }
 
-export default TareasForm;
+export default ProductForm;
