@@ -19,14 +19,14 @@ const ProductList = () => {
             .catch((err) => console.log(`Error: ${err}`));
     }, []);
 
-    const getTareas = () => {
+    const getProducts = () => {
         fetch("https://api-rest-batarseshija.azurewebsites.net/products")
             .then((res) => res.json())
             .then((data) => setProducto(data.data))
             .then((err) => console.log(`Error: ${err}`));
     }
 
-    const createTarea = (data) => {
+    const createProduct = (data) => {
         try {
             fetch("https://api-rest-batarseshija.azurewebsites.net/products", {
                 method: 'POST',
@@ -45,7 +45,7 @@ const ProductList = () => {
         }
     }
 
-    const deleteTarea = (data) => {
+    const deleteProduct = (data) => {
         try {
             fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data}`, {
                 method: "DELETE"
@@ -56,14 +56,14 @@ const ProductList = () => {
                     // setTareas([...tareas, dataResponse.data])
                 })
                 .then(() => {
-                    getTareas()
+                    getProducts()
                 })
         } catch (err) {
             console.log(err)
         }
     }
 
-    const updateTarea = (data) => {
+    const updateProduct = (data) => {
         try {
             fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data._id}`, {
                 method: 'PUT',
@@ -77,7 +77,7 @@ const ProductList = () => {
                     //setTareas(tareas.map(tarea => tarea.id === dataResponse.data.id ? dataResponse.data : tarea));
                     setShowForm(false);
                 }).then(() => {
-                    getTareas()
+                    getProducts()
                 });
         } catch (err) {
             console.log(err);
@@ -92,15 +92,15 @@ const ProductList = () => {
                     key={index}
                     index={index}
                     producto={producto}
-                    onDelete={deleteTarea}
-                    onUpdate={updateTarea}
+                    onDelete={deleteProduct}
+                    onUpdate={updateProduct}
                 />
             ))}
             <br></br>
             <Button variant="primary" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Close" : "Create Homework"}
             </Button>
-            {showForm && <ProductForm onClickFn={createTarea}></ProductForm>}
+            {showForm && <ProductForm onClickFn={createProduct}></ProductForm>}
             <br></br>
         </div>
     )
