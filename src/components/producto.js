@@ -7,7 +7,7 @@ const Producto = ({ producto, onDelete, onUpdate }) => {
     const [showForm, setShowForm] = useState(false)
 
     const clickProduct = () => {
-        onDelete(producto.id)
+        onDelete(producto._id)
     }
 
     // Regreso de informcion dinamica 

@@ -74,7 +74,7 @@ const ProductList = () => {
             })
                 .then(response => response.json())
                 .then(dataResponse => {
-                    //setTareas(tareas.map(tarea => tarea.id === dataResponse.data.id ? dataResponse.data : tarea));
+                    //setProducto(producto.map(producto => producto.id === dataResponse.data.id ? dataResponse.data : producto));
                     setShowForm(false);
                 }).then(() => {
                     getProducts()
