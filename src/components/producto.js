@@ -15,8 +15,9 @@ const Producto = ({ producto, onDelete, onUpdate }) => {
         <div>
             <h5>{producto.name}</h5>
             <h5>{`Id: ${producto.id}`}</h5>
-            <h5>{`Descripcion: ${producto.descripcion}`}</h5>
-            <h5>{`Precio: ${producto.precio}`}</h5>
+            <h5>{`Codigo: ${producto._id}`}</h5>
+            <h5>{`Descripcion: ${producto.description}`}</h5>
+            <h5>{`Precio: ${producto.price}`}</h5>
             <Button variant="danger" onClick={clickProduct} className="deleteBtn">Delete</Button>
             <Button variant="primary" className="new-btn" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Close" : "Update info"}

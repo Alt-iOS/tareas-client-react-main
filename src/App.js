@@ -5,10 +5,10 @@ import ProductList from './components/productList'
 function App() {
     return (
         <div className="App" >
-            <h1>
-                Lista de Productos disponibles
-            </h1>
-            <ProductList/>
+                <h1>
+                    Lista de Productos disponibles
+                </h1>
+                <ProductList/>
         </div>
     );
 }
