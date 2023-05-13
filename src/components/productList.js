@@ -47,7 +47,7 @@ const ProductList = () => {
 
     const deleteProduct = (data) => {
         try {
-            fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data}`, {
+            fetch(`https://api-rest-batarseshija.azurewebsites.net/products/${data}`, {
                 method: "DELETE"
             })
                 .then(response => response.json())
@@ -65,7 +65,7 @@ const ProductList = () => {
 
     const updateProduct = (data) => {
         try {
-            fetch(`https://api-rest-batarseshija.azurewebsites.net/products${data._id}`, {
+            fetch(`https://api-rest-batarseshija.azurewebsites.net/products/${data._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
