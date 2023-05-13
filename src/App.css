@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  background: #eacda3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, hsla(34, 53%, 66%, 0.589), hsla(35, 62%, 78%, 0.525)), url(C:\Users\sofia\Documents\6to\ing_soft\tareas-client-react-main\src\components\vigilanciaFerreterias.jpg);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, hsla(34, 53%, 66%, 0.589), hsla(35, 62%, 78%, 0.538)), url(C:\Users\sofia\Documents\6to\ing_soft\tareas-client-react-main\src\components\vigilanciaFerreterias.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .App-logo {

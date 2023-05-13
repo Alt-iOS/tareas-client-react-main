@@ -26,15 +26,16 @@ const ProductForm = ({ onClickFn }) => {
     return (
         <Container>
             <Row>
-                <Col md={6}  >
+                <Col md={6}>
                     <Form onSubmit={onEnviar}>
-                        <Form.Group className="mb-3" controlId="name">
-                            <Form.Label>Name</Form.Label>
+                        <Form.Group className="mb-3" controlId="nombre">
+                            <Form.Label>Nombre</Form.Label>
                             <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(txt) => setName(txt.target.value)} />
                             <Form.Text className="text-muted">
                                 Share your name with us
                             </Form.Text>
                         </Form.Group>
+
 
                         <Form.Group className="mb-3" controlId="id">
                             <Form.Label>Id</Form.Label>

@@ -1,5 +1,8 @@
 import { Form, Container, Row, Col, Button } from 'react-bootstrap';
 import { useState } from "react";
+import './style.css';
+
+
 
 const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
     const [id, setId] = useState(oldProduct.id)
@@ -24,40 +27,40 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
     }
 
     return (
-        <Container>
-            <Row>
-                <Col md={6}  >
-                    <Form onSubmit={onEnviar}>
-                        <Form.Group className="mb-3" controlId="name">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(txt) => setName(txt.target.value)} />
-                            <Form.Text className="text-muted">
-                                Share your name with us
-                            </Form.Text>
-                        </Form.Group>
+        <div className="container">
+            <Container>
+                <Row>
+                        <Form onSubmit={onEnviar}>
+                            <Form.Group className="mb-3" controlId="name">
+                                <Form.Label>Nombre</Form.Label>
+                                <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(txt) => setName(txt.target.value)} />
+                                <Form.Text className="text-muted">
+                                    Share your name with us
+                                </Form.Text>
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="id">
-                            <Form.Label>Id</Form.Label>
-                            <Form.Control type="number" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="id">
+                                <Form.Label>Id</Form.Label>
+                                <Form.Control type="number" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="descripcion">
-                            <Form.Label>Descripcion</Form.Label>
-                            <Form.Control type="text" placeholder="descripcion" value={descripcion} onChange={(txt) => setDescripcion(txt.target.value)} />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="descripcion">
+                                <Form.Label>Descripcion</Form.Label>
+                                <Form.Control type="text" placeholder="descripcion" value={descripcion} onChange={(txt) => setDescripcion(txt.target.value)} />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="precio">
-                            <Form.Label>Precio</Form.Label>
-                            <Form.Control type="number" placeholder="precio" value={precio} onChange={(txt) => setPrecio(txt.target.value)} />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="precio">
+                                <Form.Label>Precio</Form.Label>
+                                <Form.Control type="number" placeholder="precio" value={precio} onChange={(txt) => setPrecio(txt.target.value)} />
+                            </Form.Group>
 
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                            <Button variant="primary" type="submit">
+                                Submit
+                            </Button>
+                        </Form>
+                </Row>
+            </Container>
+        </div>
 
 
 
