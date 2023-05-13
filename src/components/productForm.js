@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Form, Container, Row, Col } from 'react-bootstrap';
+import { Form, Container, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import './style.css';
+
 
 const ProductForm = ({ onClickFn }) => {
 
     const [id, setId] = useState("");
     const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
+    const [price, setPrice] = useState("");
 
     const onEnviar = (event) => {
         event.preventDefault()
@@ -16,17 +18,16 @@ const ProductForm = ({ onClickFn }) => {
             let data = {
                 id: id,
                 name: name,
-                price: price,
                 description: description,
+                price: price,
             };
             onClickFn(data);
         }
     }
     // Regreso de informcion dinamica al insertar datos
     return (
-        <Container>
+        <Container named="container">
             <Row>
-                <Col md={6}>
                     <Form onSubmit={onEnviar}>
                         <Form.Group className="mb-3" controlId="nombre">
                             <Form.Label>Nombre</Form.Label>
@@ -35,7 +36,6 @@ const ProductForm = ({ onClickFn }) => {
                                 Share your name with us
                             </Form.Text>
                         </Form.Group>
-
 
                         <Form.Group className="mb-3" controlId="id">
                             <Form.Label>Id</Form.Label>
@@ -56,10 +56,8 @@ const ProductForm = ({ onClickFn }) => {
                             Submit
                         </Button>
                     </Form>
-                </Col>
             </Row>
         </Container>
     )
 }
-
 export default ProductForm;
