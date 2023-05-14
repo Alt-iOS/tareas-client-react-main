@@ -29,7 +29,7 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
                 <Form onSubmit={onEnviar}>
                     <Form.Group className="mb-3" controlId="name">
                         <Form.Label className="mb2"> NOMBRE: </Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(txt) => setName(txt.target.value)} />
+                        <Form.Control type="text" placeholder="Escribe tu nombre" value={name} onChange={(txt) => setName(txt.target.value)} />
                     </Form.Group>
 
 
@@ -40,12 +40,12 @@ const ProductUpdateForm = ({ onClickFn, oldProduct }) => {
 
                     <Form.Group className="mb-3" controlId="description">
                         <Form.Label className="mb2">DESCRIPCIÓN:</Form.Label>
-                        <Form.Control type="text" placeholder="description" value={description} onChange={(txt) => setDescription(txt.target.value)} />
+                        <Form.Control type="text" placeholder="Describe el producto" value={description} onChange={(txt) => setDescription(txt.target.value)} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="price">
                         <Form.Label className="mb2">PRECIO:</Form.Label>
-                        <Form.Control type="number" placeholder="price" value={price} onChange={(txt) => setPrice(txt.target.value)} />
+                        <Form.Control type="number" placeholder="Indica el precio" value={price} onChange={(txt) => setPrice(txt.target.value)} />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">

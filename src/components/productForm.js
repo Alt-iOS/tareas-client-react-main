@@ -30,26 +30,23 @@ const ProductForm = ({ onClickFn }) => {
             <Row>
                     <Form onSubmit={onEnviar}>
                         <Form.Group className="mb-3" controlId="nombre">
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(txt) => setName(txt.target.value)} />
-                            <Form.Text className="text-muted">
-                                Share your name with us
-                            </Form.Text>
+                            <Form.Label className="mb2">NOMBRE:</Form.Label>
+                            <Form.Control type="text" placeholder="Escribe tu nombre" value={name} onChange={(txt) => setName(txt.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="id">
-                            <Form.Label>Id</Form.Label>
+                            <Form.Label className="mb2">ID:</Form.Label>
                             <Form.Control type="number" placeholder="Id" value={id} onChange={(txt) => setId(txt.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="description">
-                            <Form.Label>Descripcion</Form.Label>
-                            <Form.Control type="text" placeholder="description" value={description} onChange={(txt) => setDescription(txt.target.value)} />
+                            <Form.Label className="mb2">DESCRIPCIÓN:</Form.Label>
+                            <Form.Control type="text" placeholder="Describe el producto" value={description} onChange={(txt) => setDescription(txt.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="price">
-                            <Form.Label>Precio</Form.Label>
-                            <Form.Control type="number" placeholder="price" value={price} onChange={(txt) => setPrice(txt.target.value)} />
+                            <Form.Label className="mb2">PRECIO:</Form.Label>
+                            <Form.Control type="number" placeholder="Indica el precio" value={price} onChange={(txt) => setPrice(txt.target.value)} />
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
