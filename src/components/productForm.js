@@ -46,7 +46,7 @@ const ProductForm = ({ onClickFn }) => {
 
                         <Form.Group className="mb-3" controlId="price">
                             <Form.Label className="mb2">PRECIO:</Form.Label>
-                            <Form.Control type="number" placeholder="Indica el precio" value={price} onChange={(txt) => setPrice(txt.target.value)} />
+                            <Form.Control type="number" placeholder="Indica el precio sin IVA" value={price} onChange={(txt) => setPrice(txt.target.value)} />
                         </Form.Group>
 
                         <Button variant="primary" type="submit">

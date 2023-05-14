@@ -15,11 +15,15 @@ const Producto = ({ producto, onDelete, onUpdate }) => {
     // Regreso de informcion dinamica 
     return (
         <div>
-            <h5 className="mb1">{producto.name}</h5>
-            <h5 className="mb1">{`Id: ${producto.id}`}</h5>
-            <h5 className="mb1">{`Codigo: ${producto._id}`}</h5>
-            <h5 className="mb1">{`Descripcion: ${producto.description}`}</h5>
-            <h5 className="mb1">{`Precio: ${producto.price}`}</h5>
+            <div className="mb1">
+            <h5>{`Id: ${producto.id}`}</h5>
+
+                <h5>{producto.name}</h5>
+                <h5>{`Descripción: ${producto.description}`}</h5>
+                <h5>{`Precio: $${producto.price}`}</h5>
+                <h5>{`Código: ${producto._id}`}</h5>
+
+            </div>
             <Button variant="danger" onClick={clickProduct} className="deleteBtn">Delete</Button>
             <Button variant="primary" className="new-btn" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Close" : "Update info"}
