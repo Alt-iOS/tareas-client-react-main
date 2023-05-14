@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Producto from "./producto";
 import ProductForm from "./productForm"
 import { Button } from 'react-bootstrap';
+import './style.css';
+
 
 
 const ProductList = () => {
@@ -96,12 +98,12 @@ const ProductList = () => {
                     onUpdate={updateProduct}
                 />
             ))}
-            <br></br>
-            <Button variant="primary" onClick={() => setShowForm(!showForm)}>
-                {showForm ? "Close" : "Create Homework"}
-            </Button>
-            {showForm && <ProductForm onClickFn={createProduct}></ProductForm>}
-            <br></br>
+            <div className="boton">
+                <Button  variant="primary" onClick={() => setShowForm(!showForm)}>
+                    {showForm ? "Cerrar" : "Agregar producto"}
+                </Button>
+                {showForm && <ProductForm onClickFn={createProduct}></ProductForm>}
+            </div>
         </div>
     )
 }

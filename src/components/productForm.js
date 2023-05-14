@@ -50,7 +50,7 @@ const ProductForm = ({ onClickFn }) => {
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Submit
+                            Guardar
                         </Button>
                     </Form>
             </Row>
