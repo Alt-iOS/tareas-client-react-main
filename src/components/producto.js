@@ -14,7 +14,7 @@ const Producto = ({ producto, onDelete, onUpdate }) => {
 
     // Regreso de informcion dinamica 
     return (
-        <div>
+        <div >
             <div className="mb1">
             <h5>{`ID: ${producto.id}`}</h5>
 
