@@ -1,6 +1,5 @@
-
 .App {
-  text-align: center;
+  align-items: center;
   padding-top: 2%;
   padding-bottom: 3%;
   background: #eacda3;  /* fallback for old browsers */
@@ -17,6 +16,8 @@
   color: white;
   background-color:black;
  }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

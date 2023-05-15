@@ -7,7 +7,7 @@ function App() {
     return (
             <div className="App" >
                 <h1 className="title">
-                    PRODUCTOS DISPONIBLES
+                    SISTEMA DE INVENTARIO
                 </h1>
                 <Login />
             </div>

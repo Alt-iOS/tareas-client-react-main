@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Producto from "./producto";
 import ProductForm from "./productForm"
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import './style.css';
 
 
@@ -89,6 +89,9 @@ const ProductList = () => {
     // Regreso dinamico de informacion
     return (
         <div>
+            <h1 className="title">
+                    LISTA DE PRODUCTOS
+            </h1>
             {producto.map((producto, index) => (
                 <Producto
                     key={index}
@@ -98,12 +101,12 @@ const ProductList = () => {
                     onUpdate={updateProduct}
                 />
             ))}
-            <div className="boton">
+            <Container className="boton">
                 <Button  variant="primary" onClick={() => setShowForm(!showForm)}>
                     {showForm ? "Cerrar" : "Agregar producto"}
                 </Button>
                 {showForm && <ProductForm onClickFn={createProduct}></ProductForm>}
-            </div>
+            </Container>
         </div>
     )
 }
