@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import {Button, Container, Form, Row} from "react-bootstrap";
+import {render} from "@testing-library/react";
+import ProductList from "./productList";
 
 const Login = ()=> {
     const [showForm, setShowForm] = useState(false);
@@ -9,7 +11,7 @@ const Login = ()=> {
     const loginHandler = (data) => {
         try {
             fetch(`https://api-rest-batarseshija.azurewebsites.net/login`, {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -17,10 +19,8 @@ const Login = ()=> {
             })
                 .then(response => response.json())
                 .then(dataResponse => {
-                    //setProducto(producto.map(producto => producto.id === dataResponse.data.id ? dataResponse.data : producto));
-                    setShowForm(false);
                 }).then(() => {
-
+                    window.location.href = "/productList"
             });
         } catch (err) {
             console.log(err);
@@ -38,7 +38,7 @@ const Login = ()=> {
 
                     <Form.Group className="mb-3" controlId="password">
                         <Form.Label className="mb2">Password:</Form.Label>
-                        <Form.Control type="text" placeholder="Escribe tu contraseña" value={password} onChange={(txt) => setPassword(txt.target.value)} />
+                        <Form.Control type="password" placeholder="Escribe tu contraseña" value={password} onChange={(txt) => setPassword(txt.target.value)} />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
