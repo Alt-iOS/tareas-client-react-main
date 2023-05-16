@@ -27,6 +27,7 @@ const Login = ()=> {
                     if (!response.ok) {
                     alert("Usuario o contraseña incorrectos");
                     } else {
+
                         navigate("/productList", {replace: true});
                     }
                 });
