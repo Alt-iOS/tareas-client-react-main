@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import index from './index';
+import App from "./App";
 
 test('renders learn react link', () => {
-  render(<index />);
+  render(<App />); //using index como el render, el error es que el elemento a renderizar no es DOM adentro de REACT.DOM
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
