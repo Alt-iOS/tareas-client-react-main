@@ -7,17 +7,16 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ProductList from "./components/productList";
 import Login from "./components/login";
 
-ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route index element={<App />} />
-                <Route path="/productList" element={<ProductList />} />
-                <Route path="/" element={<Login />} />
-            </Routes>
-        </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
+ReactDOM.createRoot(document.getElementById("root")).render(
+        <React.StrictMode>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<App />} />
+                    <Route path="/productList" element={<ProductList />} />
+                    <Route path="/" element={<Login />} />
+                </Routes>
+            </BrowserRouter>
+        </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
