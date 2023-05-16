@@ -31,7 +31,7 @@ const ProductForm = ({ onClickFn }) => {
                     <Form onSubmit={onEnviar}>
                         <Form.Group className="mb-3" controlId="nombre">
                             <Form.Label className="mb2">NOMBRE:</Form.Label>
-                            <Form.Control type="text" placeholder="Escribe tu nombre" value={name} onChange={(txt) => setName(txt.target.value)} />
+                            <Form.Control type="text" placeholder="Escribe el nombre del producto" value={name} onChange={(txt) => setName(txt.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="id">
