@@ -22,7 +22,7 @@ const UserForm = ({ onClickFn }) => {
                 password: password,
             }
             onClickFn(data);
-
+            alert("Usuario registrado correctamente");
         }
     }
 
