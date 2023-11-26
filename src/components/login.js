@@ -16,7 +16,8 @@ const Login = ()=> {
         event.preventDefault();
         try {
             const requestBody = {email: email, password: password}
-            fetch(`https://api-rest-batarseshija.azurewebsites.net/login`, {
+            //fetch(`https://api-rest-batarseshija.azurewebsites.net/login`, {
+            fetch('http://localhost:8080/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +39,8 @@ const Login = ()=> {
 
     const createHandler = (event) => {
         try {
-                fetch("https://api-rest-batarseshija.azurewebsites.net/register", {
+                //fetch("https://api-rest-batarseshija.azurewebsites.net/register", {
+                fetch('http://localhost:8080/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
