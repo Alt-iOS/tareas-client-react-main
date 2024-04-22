@@ -5,8 +5,6 @@ import ProductForm from "./productForm";
 import { Button, Container } from "react-bootstrap";
 import "./style.css";
 
-const BACK_URL = "https://stingray-app-n6ohc.ondigitalocean.app/";
-
 const ProductList = () => {
   const [producto, setProducto] = useState([]);
   const [showForm, setShowForm] = useState(false);
