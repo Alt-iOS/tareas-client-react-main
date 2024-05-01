@@ -11,16 +11,14 @@ const ProductList = () => {
 
   // Hook para editar varibles de estado
   useEffect(() => {
-    //fetch("https://api-rest-batarseshija.azurewebsites.net/products")
-    fetch(`https://stingray-app-n6ohc.ondigitalocean.app/products`)
+    fetch(`https://node-api-vb.azurewebsites.net/products`)
       .then((res) => res.json())
       .then((data) => setProducto(data.data))
       .catch((err) => console.log(`Error: ${err}`));
   }, []);
 
   const getProducts = () => {
-    // fetch("https://api-rest-batarseshija.azurewebsites.net/products")
-    fetch(`https://stingray-app-n6ohc.ondigitalocean.app/products`)
+    fetch(`https://node-api-vb.azurewebsites.net/products`)
       .then((res) => res.json())
       .then((data) => setProducto(data.data))
       .then((err) => console.log(`Error: ${err}`));
@@ -28,8 +26,7 @@ const ProductList = () => {
 
   const createProduct = (data) => {
     try {
-      //fetch("https://api-rest-batarseshija.azurewebsites.net/products",
-      fetch(`https://stingray-app-n6ohc.ondigitalocean.app/products`, {
+      fetch(`https://node-api-vb.azurewebsites.net/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,8 +45,7 @@ const ProductList = () => {
 
   const deleteProduct = (data) => {
     try {
-      //fetch(`https://api-rest-batarseshija.azurewebsites.net/products/${data}`, {
-      fetch(`https://stingray-app-n6ohc.ondigitalocean.app/products/${data}`, {
+      fetch(`https://node-api-vb.azurewebsites.net/products/${data}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
@@ -67,17 +63,13 @@ const ProductList = () => {
 
   const updateProduct = (data) => {
     try {
-      //fetch(`https://api-rest-batarseshija.azurewebsites.net/products/${data._id}`, {
-      fetch(
-        `https://stingray-app-n6ohc.ondigitalocean.app/products/${data._id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+      fetch(`https://node-api-vb.azurewebsites.net/products/${data._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
         },
-      )
+        body: JSON.stringify(data),
+      })
         .then((response) => response.json())
         .then((dataResponse) => {
           //setProducto(producto.map(producto => producto.id === dataResponse.data.id ? dataResponse.data : producto));

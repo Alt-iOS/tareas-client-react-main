@@ -15,8 +15,7 @@ const Login = () => {
     event.preventDefault();
     try {
       const requestBody = { email: email, password: password };
-      //fetch(`https://api-rest-batarseshija.azurewebsites.net/login`, {
-      fetch(`https://stingray-app-n6ohc.ondigitalocean.app/login`, {
+      fetch(`https://node-api-vb.azurewebsites.net/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,8 +35,7 @@ const Login = () => {
 
   const createHandler = (event) => {
     try {
-      //fetch("https://api-rest-batarseshija.azurewebsites.net/register", {
-      fetch(`https://stingray-app-n6ohc.ondigitalocean.app/register`, {
+      fetch(`https://node-api-vb.azurewebsites.net/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
